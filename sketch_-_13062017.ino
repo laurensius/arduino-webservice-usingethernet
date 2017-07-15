@@ -8,12 +8,9 @@
 #define STATUS_DISCONNECTED 0
 
 char namaServer[] = "169.254.110.195";
-//char namaServer[] = "iot-project.laurensius-dede-suhardiman.com";
 
-//byte IP_eth[] = {192,168,0,110};
 byte IP_eth[] = {169,254,110,196};
 byte MAC_eth[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-
 
 int respon_dht11;
 int counter = 0;
@@ -89,7 +86,7 @@ void kirimData(String a){
     myEthernet.print(uri_segment); 
     Serial.print("Data yang dikirim di ke server : ");
     Serial.println(a);
-    myEthernet.println(" HTTP/1.0");
+    myEthernet.println(" HTTP/1.1");
     myEthernet.print( "Host: " );
     myEthernet.println(" iot-project.laurensius-dede-suhardiman.com \r\n");
 //    myEthernet.println(" 192.168.0.102 \r\n");
